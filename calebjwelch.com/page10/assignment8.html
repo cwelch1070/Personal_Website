@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../bootstrap-5.1.3/css/bootstrap.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="https://www.calebjwelch.com">calebjwelch.com</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="http://www.calebjwelch.com">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://github.com/cwelch1070">GitHub</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Assignments
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="../page1/assignment1.html">Assignment 1 JS</a></li>
+                  <li><a class="dropdown-item" href="../page2/phpCalculator.php">Assignment 1 PHP</a></li>
+                  <li><a class="dropdown-item" href="../page3/assignment2.html">Assignment 2 JS</a></li>
+                  <li><a class="dropdown-item" href="../page4/assignment3.html">Assignment 3 JS</a></li>
+                  <li><a class="dropdown-item" href="../page5/assignment4.php">Assignment 4 PHP</a></li>
+                  <li><a class="dropdown-item" href="../page6/assignment5a.html">Assignment 5a</a></li>
+                  <li><a class="dropdown-item" href="../page6/assignment5b.html">Assignment 5b</a></li>
+                  <li><a class="dropdown-item" href="../page7/alabama.php">Assignment 6 PHP Alabama</a></li>
+                  <li><a class="dropdown-item" href="../page7/alaska.php">Assignment 6 PHP Alaska</a></li>
+                  <li><a class="dropdown-item" href="../page7/arizona.php">Assignment 6 PHP Arizona</a></li>
+                  <li><a class="dropdown-item" href="../page9/assignment7-inline.html">Assignment 7 Inline</a></li>
+                  <li><a class="dropdown-item" href="../page9/assignment7-internal.html">Assignment 7 Internal</a></li>
+                  <li><a class="dropdown-item" href="../page9/assignment7-external.html">Assignment 7 External</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">About</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled"></a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container">
+      <h2>Powershell script to change file name of bowl pictures to wooden-bowl</h2>
+      <img src="shellScript1-1.png" alt="script1-1">
+      <br>
+      <h2>Powershell script to change the name in the html files</h2>
+      <img src="shellScript2.png" alt="script2">
+      <br>
+      <p>
+        <p></p>//Replaces the word bowl in the file names with the words wooden-bowl for the files in the bowl directory
+        <p></p> get-childitem *.jpg | foreach { rename-item $_ $_.Name.Replace("bowl", "wooden-bowl")}
+       
+        <p></p> //replaces the word wooden-bowl in the file names in the bowl directory with the word bowl
+        <p></p> get-childitem *.jpg | foreach { rename-item $_ $_.Name.Replace("wooden-bowl", "bowl")}
+      
+        <p></p>//Defines what to look for
+        <p></p>//Replaces the above specified with Caleb Welch
+        <p></p>//Points to correct directory of file location
+        <p></p>//Defines the files extension which is .html 
+        <p></p>//This is a recursive loop that goes through all six files and changes the specified name
+       
+        
+        <p> $search = 'Your Name' 
+        <p></p>$replace_with = 'Caleb Welch' 
+        <p></p>$base_dir = 'C:\htmlFiles'
+        <p></p>$text_file_ext = 'html'
+       
+        
+        <p>Get-ChildItem $base_dir -Recurse -Include "*.$text_file_ext" | 
+        <p></p>ForEach-Object { (Get-Content $_.FullName) | 
+        <p>ForEach-Object {$_-replace $search, $replace_with} 
+        <p>Set-Content $_.FullName }
+        
+        
+        <p> Private Sub CommandButtonl_Click)
+        <p>Dim pathName
+        <p>pathName = Cells (1, 2)
+        <p>Call getFiles (pathName)
+        <p>MsgBox ("Finished converting files.")
+        <p>End Sub
+        <p> Sub getFiles (ByVal path As String)
+        <p> Dim fso As Object ' File System Object
+        <p>Set fso = Create0bject ("Scripting.filesystemobject")
+        <p> Dim temp
+        
+        <p> Dim folder As Obiect
+        <p>Set folder = fso.getfolder(path)
+        <p> Dim subfolder As Object
+        <p> Dim currFile As Object
+        
+        <p>For Each subfolder In folder.subfolders
+        <p> getFiles (subfolder.path)
+        <p>Next subfolder
+        
+        <p>For Each currFile In folder.Files
+        <p>If LCase (Right (currFile.Name, 5)) = ".html" Then
+        <p> " MsqBox (currFile)
+        <p> Dim tempFile
+       <p>tempFile = Cells (2, 2)
+       <p> Open currFile For Input As #1
+       <p> Open tempFile For Output As #2
+       <p>While Not EOF(1)
+       <p> Line Input #1, temp
+       <p> temp = Replace (temp, "NSU", "Northeastern State University")
+       <p>  Print #2, temp
+       <p> Wend
+       <p> Close #1
+       <p> Close #2
+        
+       <p>Open tempFile For Input As #1
+       <p> Open currFile For Output As #2
+       <p>  While Not EOF(1)
+       <p>  Line Input #1, temp
+       <p>  Print #2, temp
+       <p> Wend
+       <p>  Close #1
+       <p> Close #2
+       <p> End If
+       <p> Next currFile
+       <p> Set fso = Nothing
+       <p> Set folder = Nothing
+       <p> Set subfolder = Nothing
+       <p> Set currFile = Nothing
+       <p> End Sub
+      </p>
+      </div>
+
+      <script src="../bootstrap-5.1.3/js/bootstrap.bundle.js"></script>
+</body>
+</html>

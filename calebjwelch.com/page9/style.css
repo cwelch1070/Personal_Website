@@ -1,0 +1,23 @@
+.header1 {
+    background-color: green;
+    color: white;
+    text-align: center;
+}
+
+.header2 {
+    background-color: green;  
+    color: white; 
+    text-align: center;
+}
+
+.body1 {
+    background-color: pink;
+}
+
+.body2 {
+    background-color: pink; 
+}
+
+.link1 {
+    color: white; background-color: green; padding: 5px; border-radius: 5px;
+}

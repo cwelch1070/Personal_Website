@@ -1,0 +1,74 @@
+//Replaces the word bowl in the file names with the words wooden-bowl for the files in the bowl directory
+get-childitem *.jpg | foreach { rename-item $_ $_.Name.Replace("bowl", "wooden-bowl")}
+
+//replaces the word wooden-bowl in the file names in the bowl directory with the word bowl
+get-childitem *.jpg | foreach { rename-item $_ $_.Name.Replace("wooden-bowl", "bowl")}
+
+//Defines what to look for
+//Replaces the above specified with Caleb Welch
+//Points to correct directory of file location
+//Defines the files extension which is .html 
+//This is a recursive loop that goes through all six files and changes the specified name
+
+$search = 'Your Name' 
+$replace_with = 'Caleb Welch' 
+$base_dir = 'C:\htmlFiles'
+$text_file_ext = 'html' 
+
+Get-ChildItem $base_dir -Recurse -Include "*.$text_file_ext" | 
+	ForEach-Object { (Get-Content $_.FullName) | 
+	ForEach-Object {$_-replace $search, $replace_with} 
+	Set-Content $_.FullName }
+
+
+
+Private Sub CommandButtonl_Click)
+	Dim pathName
+	pathName = Cells (1, 2)
+	Call getFiles (pathName)
+	MsgBox ("Finished converting files.")
+End Sub
+Sub getFiles (ByVal path As String)
+	Dim fso As Object ' File System Object
+	Set fso = Create0bject ("Scripting.filesystemobject")
+	Dim temp
+
+	Dim folder As Obiect
+	Set folder = fso.getfolder(path)
+	Dim subfolder As Object
+	Dim currFile As Object
+
+	For Each subfolder In folder.subfolders
+		getFiles (subfolder.path)
+	Next subfolder
+
+	For Each currFile In folder.Files
+		If LCase (Right (currFile.Name, 5)) = ".html" Then
+		" MsqBox (currFile)
+		Dim tempFile
+		tempFile = Cells (2, 2)
+		Open currFile For Input As #1
+		Open tempFile For Output As #2
+		While Not EOF(1)
+			Line Input #1, temp
+			temp = Replace (temp, "NSU", "Northeastern State University")
+			Print #2, temp
+		Wend
+		Close #1
+		Close #2
+
+		Open tempFile For Input As #1
+		Open currFile For Output As #2
+		While Not EOF(1)
+			Line Input #1, temp
+			Print #2, temp
+		Wend
+		Close #1
+		Close #2
+	End If
+	Next currFile
+	Set fso = Nothing
+	Set folder = Nothing
+	Set subfolder = Nothing
+	Set currFile = Nothing
+End Sub

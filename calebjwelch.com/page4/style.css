@@ -1,0 +1,57 @@
+.nav {
+    overflow: hidden;
+    background-color: black;
+  }
+  
+  .nav a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .nav a.hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .nav a.active {
+    background-color: #03AA6D;
+    color: white;
+  }
+
+.div1 {
+    float: left;
+    width: 130px;
+    background-color: pink;
+}
+
+.div2 { 
+    float: left;
+    width: 180px;
+    background-color: yellow;
+}
+
+.div3 {
+    float: left;
+    width: 150px;
+    background-color: lightblue;
+}
+
+.div4 {
+    clear: both;
+}
+
+.div5 {
+    float: left;
+    width: 150px;
+    background-color: lightcoral;
+}
+
+.div6 {
+    float: left;
+    width: 150px;
+    background-color: lightgreen;
+}

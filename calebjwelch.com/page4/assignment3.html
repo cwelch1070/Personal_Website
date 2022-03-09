@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Assignment 3</title>
+    </head>
+    <body>
+    
+        <div class="container">
+            <div class="nav">
+                <a class="active" href="../index.html">Home</a>
+                <a href="../page2/assignment1.html">Assignment 1 JS</a>
+                <a href="../php/phpCalculator.php">Assignmnet 1 PHP</a>
+                <a href="page4/assignment3.html">Assignment 3</a>
+                <a href="page5/assignment4.html">Assignment 4</a>
+            </div>
+                <script src="script.js"></script>
+                <h2>Health Club Calculator (JS)</h2>
+                Caleb Welch
+            <form class="form1" id="form1">
+                <div class="div4">&nbsp;</div>
+
+                <div class="div1"> 
+                    <dl>
+                        <dt>Membership</dt>
+                        <dt><input type="radio" onchange="calculate()" id="membership1" name="membership" value="Basic" checked>Basic</dt>
+                        <dt><input type="radio" onchange="calculate()" id="membership2" name="membership" value="Gold">Gold</dt>
+                        <dt><input type="radio" onchange="calculate()" id="membership3" name="membership" value="GoldPlus">Gold Plus</dt>
+                    </dl>
+                </div>
+
+                <div class="div2">
+                    <dl>
+                        <dt>Additional Charges (1)</dt>
+                        <dt><input type="checkbox" onchange="calculate()" name="tennis" id="tennis">Tennis</dt>
+                        <dt><input type="checkbox" onchange="calculate()" name="racquetball" id="racquetball">Racquetball</dt>
+                        <dt><input type="checkbox" onchange="calculate()" name="golf" id="golf">Golf</dt>
+                    </dl>
+                </div>
+
+                <div class="div3">  
+                    <dl>
+                        <dt>Additional Charges (2)</dt>
+                        <dt><input type="checkbox" onchange="calculate()" name="additional" id="additional" value="100">Child Care</dt>
+                        <dt><input type="checkbox" onchange="calculate()" name="additional" id="additional" value="120">Personal Trainer</dt>
+                        <dt><input type="checkbox" onchange="calculate()" name="additional" id="additional" value="20">Swimming Pool</dt>
+                    </dl>
+                </div>
+
+                <div class="div4">&nbsp;</div>
+
+                <div class="div5">
+                    <dl>
+                        <dt> <input type="button" onclick="calculate()" value="Calculate Total"></dt>
+                        <dt> <input type="button" onclick="clearValues()" value="Clear"></dt>
+                    </dl>
+                </div>
+
+                <div class="div6">
+                    <dl>
+                        <dt>Tax: <input type="text" id="tax" name="tax" value="0" size="10"></dt>
+                        <dt>Total: <input type="text" id="total" name="total" size="10"></dt>
+                    </dl>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
