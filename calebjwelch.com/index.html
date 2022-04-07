@@ -5,10 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="bootstrap-5.1.3/css/bootstrap.css">
+    <link rel="stylesheet" href="main.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css" 
+          integrity="sha512-4rPgyv5iG0PZw8E+oRdfN/Gq+yilzt9rQ8Yci2jJ15rAyBmF0HBE4wFjBkoB72cxBeg63uobaj1UcNt/scV93w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<body class="bg-dark">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="https://www.calebjwelch.com">calebjwelch.com</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,13 +69,87 @@
         </div>
       </nav>
     
-    <div class="container">
-        <div class="position-relative">
-            <h1 class="position-absolute top-50 start-50 translate-middle-x">Caleb Welch</h1>
-        </div>
-    </div>
     
+    
+    <div id="fullpage">
+      <div class="section s1">
+        <p class="container one">Caleb Welch</p>
+        <h1 class="container">Software Developer</h1>
+        <p class="container two">
+          Computer Science major that is eager to learn and interested in a variety of technologies.<br> 
+          Primarily, but not limited to, backend programming.
+        </p>
+      </div>
 
-    <script src="bootstrap-5.1.3/js/bootstrap.bundle.js"></script>
+      <div class="section s2">
+        <h1 class="container">Projects</h1>
+        <table class="container">
+          <tr>
+            <th>Project Name</th>
+            <th>Description</th>
+            <th>Links</th>
+          </tr>
+          <tr>
+              <td>Spring Web Application</td>
+              <td>In an attempt to learn more about backend software development I started this web application project.<br>
+                  It is a simple CRUD application that access and manipulate a database using Hibernate and then Thymeleaf to <br>
+                  to display the tables information to an HTML page. My goal at the end of this project is to create a web based <br>
+                  application that will allow farmers and rancher to more effecently update their livestock records.
+              </td>
+              <td><a href="https://github.com/cwelch1070/WebApplication">GitHub</a></td>
+          </tr>
+          <tr>
+            <td>Personal Website</td>
+            <td>Building my personal website has taught me much about how the internet as whole works. <br>
+                Before I was ever able to get a frontend up and running I bought the domain name calebjwelch <br>
+                and then rented a virtual private server to host my website on. From there a chose my operation system <br>
+                which in my case I chose Ubuntu because I was most familiar with it and then installed appache webserver on Ubuntu <br>
+                One of the biggest challenges I faced setting up my VPS was migrating my DNS to cloudflare from GoDaddy to manage my <br>
+                domain name and then generate and configured my SSL certificate on my web server.
+            </td>
+            <td><a href="https://github.com/cwelch1070/Personal_Website">GitHub</a></td>
+          </tr>
+          <tr>
+            <td>Java Command Line Game</td>
+            <td>A command line version of the game Wordle that I started as a project to give me a better understanding of Java and object-oriented<br>
+                programming. This project demonstrates the use of composition, encapsulation, and polymorphism in Java. The game works by reading a text file
+                that contains 58,000 words from a dictionary, stores them in an arrayList, and then converts that arrayList into a standard string array that
+                is sorted. Only words that contain exactly 5 characters are kept and then stored in a new arrayList. A single word is randomly chosen from the arrayList
+                and that word is used to play the game. 
+            </td>
+            <td><a href="https://github.com/cwelch1070/WordGame">GitHub</a></td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="section s3">
+        <h1 class="container">Other Interests</h1>
+        <ul class="container">
+          <li>Web 3 tech stack</li>
+          <li>Crypto Currencies</li>
+          <li>Decentralized Networks</li>
+          <li>Dapps</li>
+        </ul>
+        
+
+      </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.js" integrity="sha512-GgeYbSbIufsTDQLCp/zhWN2AJRddt3w9p942+lOS5emAtvRBGo65t2zq8Svq+CIZIo1V1DgA6kHzQTBCH0HiXQ==" 
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+
+        new fullpage('#fullpage', {
+            autoScrolling: true,
+            navigation: true
+        })
+            
+
+    </script>
 </body>
 </html>
